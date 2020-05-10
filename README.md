@@ -1,6 +1,6 @@
 # LatexToMathML
-Latex转Word格式的公式
-
+Latex转Word格式的公式，输入Latex然后转换为MathML，直接粘贴到Word文档即可！
+对写毕业论文的理科小伙伴来说，非常的方便！
 ## 演示网站
 > [Latex转Word格式的公式](http://web.xiaoyv.top/web/LatexToMathML/)
 
