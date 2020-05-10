@@ -4,6 +4,10 @@ Latex转Word格式的公式，输入Latex然后转换为MathML，直接粘贴到
 ## 演示网站
 > [Latex转Word格式的公式](http://web.xiaoyv.top/web/LatexToMathML/)
 
+## Word文档效果图
+![Word文档效果图]("word_imag/wrod1.png?raw=true")
+![Word文档效果图]("word_imag/wrod2.png?raw=true")
+
 ## Latex语法
 
 |公式|语法|示例|预览|
