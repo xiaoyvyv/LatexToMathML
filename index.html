@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Latex公式转Word</title>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script src="js/mathjax-config.js" defer></script>
+    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="toolbar">
+    <ul>
+        <li><a href="#home">主页</a></li>
+        <li><a href="#news">新闻</a></li>
+        <li><a href="#contact">联系</a></li>
+        <li style="float: right"><a href="#about">关于</a></li>
+    </ul>
+</div>
+<div>
+    <!--    左边部分-->
+    <div class="left_content">
+        <p class="content-title">请在下面的输入框内输入Latex公式</p>
+        <div class="text">
+            <label>
+                <textarea id="input" style="height: 60px" spellcheck="false"
+                          placeholder="Latex...">\sqrt[8]{\frac{3\times a}{2}}</textarea>
+            </label>
+        </div>
+        <div id="preview">
+
+        </div>
+        <div class="btn">
+            <button onclick="previewTex()">预览公式渲染结果</button>
+            <button id="render" onclick="toWord()">转为Word公式并复制</button>
+            <button onclick="clearAll()">清空预览和输出</button>
+        </div>
+        <hr>
+        <p class="result-title">输出结果</p>
+        <div class="text">
+            <label>
+                <textarea id="output" spellcheck="false" placeholder="Result..."></textarea>
+            </label>
+        </div>
+    </div>
+    <!--    右边部分-->
+    <div id="symbol" class="right_content">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" allowTransparency="true"
+                src="symbol.html"></iframe>
+    </div>
+</div>
+<script type="text/javascript">
+
+    let symbol = document.getElementById("symbol");
+    symbol.style.height=window.screen.availHeight+"px";
+    clearOutput();
+    clearPreview();
+
+    // 预览公式
+    function previewTex() {
+        let input = document.getElementById("input").value.trim();
+        let preview = clearPreview();
+        MathJax.texReset();
+        let options = MathJax.getMetricsFor(preview);
+        options.display = true;
+        MathJax.tex2chtmlPromise(input, options).then(function (node) {
+            preview.appendChild(node);
+            MathJax.startup.document.clear();
+            MathJax.startup.document.updateDocument();
+        }).catch(function (err) {
+            //
+            //  If there was an error, put the message into the output instead
+            //
+            preview.appendChild(document.createElement('pre')).appendChild(document.createTextNode(err.message));
+        }).then(function () {
+
+        });
+    }
+
+    // 转为Word公式
+    function toWord() {
+        // 获取输入的Latex
+        let input = document.getElementById("input").value.trim();
+        // 输出框
+        let output = clearOutput();
+        // 重置
+        MathJax.texReset();
+        MathJax.tex2mmlPromise(input).then(function (mml) {
+            // 转换结果
+            output.value = mml;
+        }).catch(function (err) {
+            // 发生错误时
+            output.firstChild.appendChild(document.createTextNode(err.message));
+        }).then(function () {
+            // 完成时
+            copyText();
+        });
+    }
+
+    // 清空
+    function clearAll() {
+        clearOutput();
+        clearPreview();
+    }
+
+    // 清空预览
+    function clearPreview() {
+        let preview = document.getElementById('preview');
+        // 清空预览
+        preview.innerHTML = '<pre></pre>';
+        // 返回预览节点
+        return preview;
+    }
+
+    // 清空输出框
+    function clearOutput() {
+        // 输出框
+        let output = document.getElementById('output');
+        // 清空输出框
+        output.value = '';
+        // 返回输出框
+        return output;
+    }
+
+    //复制内容到剪切板
+    function copyText() {
+        // 输出框
+        let output = document.getElementById('output');
+        // 选择对象
+        output.select();
+        // 执行浏览器复制命令
+        document.execCommand("Copy");
+        alert("已复制为Word格式，请到Word内贴粘");
+    }
+</script>
+</body>
+</html>
