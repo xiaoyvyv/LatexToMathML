@@ -6,9 +6,9 @@ Latex转Word格式的公式
 
 ## Latex语法
 
-|公式|语法|示例|
-|:--|:--|:--|
-|分数|\frac{}{} |![](http://latex.codecogs.com/gif.latex?\frac{5}{3}) |
+|公式|语法|示例|预览|
+|:--|:--|:--|:--|
+|分数|\frac{}{} |\frac{5}{3} | ![](http://latex.codecogs.com/gif.latex?\frac{5}{3}) |
 
 ## 问题反馈
 > QQEmail:1223414335@qq.com
