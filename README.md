@@ -8,7 +8,7 @@ Latex转Word格式的公式
 
 |公式|语法|示例|
 |:--|:--|:--|
-|分数|\frac{}{} |$\frac{}{}$ |
+|分数|\frac{}{} |![](http://latex.codecogs.com/gif.latex?\frac{5}{3}) |
 
 ## 问题反馈
 > QQEmail:1223414335@qq.com
