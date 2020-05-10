@@ -6,8 +6,8 @@ Latex转Word格式的公式，输入Latex然后转换为MathML，直接粘贴到
 > [Latex转Word格式的公式](http://web.xiaoyv.top/web/LatexToMathML/)
 
 ## Word文档效果图
-![Word文档效果图](word_image/word1.png?raw=true)
-![Word文档效果图](word_image/word2.png?raw=true)
+> ![Word文档效果图](word_image/word1.png?raw=true)
+> ![Word文档效果图](word_image/word2.png?raw=true)
 
 ## Latex语法
 
