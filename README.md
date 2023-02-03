@@ -3,7 +3,7 @@ Latex转Word格式的公式，输入Latex然后转换为MathML，直接粘贴到
 对写毕业论文的理科小伙伴来说，非常的方便！
 
 ## 演示网站
-> [Latex转Word格式的公式](https://web.xiaoyv.com.cn/v1/LatexToMathML/index.html)
+> [Latex转Word格式的公式]([https://web.xiaoyv.com.cn/v1/LatexToMathML/index.html](https://htmlpreview.github.io/?https://github.com/xiaoyvyv/LatexToMathML/blob/master/index.html))
 
 ## Word文档效果图
 > ![Word文档效果图](word_image/word1.png?raw=true)
